@@ -235,14 +235,14 @@ sup {
 }
 
 a {
-    color: #007bff;
+    color: #dc3545;
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
 }
 
 a:hover {
-    color: #0056b3;
+    color: #dc3545;
     text-decoration: underline
 }
 
