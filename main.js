@@ -40,6 +40,8 @@ navLinks.forEach(link => {
     });
 });
 
+
+
 // Show home page by default
 showPage('home');
 
