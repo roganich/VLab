@@ -1,0 +1,368 @@
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a3c6ff;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #004d99;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #003366;
+}
+
+/* Research Areas */
+.research-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.area-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.area-card:hover {
+    transform: translateY(-5px);
+}
+
+.area-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.area-card-content {
+    padding: 20px;
+}
+
+.area-card h3 {
+    margin-top: 0;
+    color: #003366;
+}
+
+/* Team Members */
+/* Additional CSS for the team member cards */
+.team-member-card {
+    display: flex;
+    margin-bottom: 40px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.team-member-image {
+    flex: 0 0 350px;
+}
+
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-info {
+    flex: 1;
+    padding: 25px;
+}
+
+.team-member-info h3 {
+    margin-top: 0;
+    color: #003366;
+    font-size: 1.6rem;
+}
+
+.team-member-position {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.team-member-studies {
+    margin-bottom: 15px;
+}
+
+.team-member-bio {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.team-member-email {
+    display: inline-block;
+    color: #003366;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.team-member-email:hover {
+    text-decoration: underline;
+}
+
+.team-section {
+    margin-bottom: 40px;
+}
+
+.team-section h3 {
+    text-align: center;
+    margin: 50px 0 30px;
+    color: #003366;
+    font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+    .team-member-card {
+        flex-direction: column;
+    }
+    
+    .team-member-image {
+        flex: 0 0 250px;
+    }
+}
+
+/* Publications */
+.publication {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.publication h3 {
+    margin-top: 0;
+    color: #003366;
+}
+
+.publication p {
+    margin-bottom: 10px;
+}
+
+.publication .authors {
+    font-style: italic;
+    color: #666;
+}
+
+.publication .journal {
+    font-weight: 500;
+}
+
+.publication .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* Contact Form */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info h3 {
+    margin-top: 0;
+    color: #003366;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h3 {
+    color: #a3c6ff;
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 20px;
+    }
+    
+    nav li {
+        margin: 0 10px;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}

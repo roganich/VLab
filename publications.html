@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Research Lab</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <div id="header-container"></div>
+
+    <!-- Publications Page Content -->
+    <main id="publications-page">
+        <section>
+            <div class="container">
+                <h2>Publications</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Explore our research publications, including journal articles, conference papers, book chapters, and technical reports.</p>
+                
+                <!-- Filter Controls -->
+                <div style="margin-bottom: 40px; text-align: center;">
+                    <label for="year-filter" style="margin-right: 10px;">Filter by Year:</label>
+                    <select id="year-filter" style="padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                        <option value="all">All Years</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                    
+                    <label for="type-filter" style="margin: 0 10px 0 20px;">Filter by Type:</label>
+                    <select id="type-filter" style="padding: 8px; border-radius: 4px; border: 1px solid #ddd;">
+                        <option value="all">All Types</option>
+                        <option value="journal">Journal Articles</option>
+                        <option value="conference">Conference Papers</option>
+                        <option value="book">Book Chapters</option>
+                        <option value="report">Technical Reports</option>
+                    </select>
+                </div>
+                
+                <!-- Publications List -->
+                <div class="publications-list">
+                    <!-- 2024 Publications -->
+                    <h3>2024</h3>
+                    <div class="publication">
+                        <h4>Single cell and TCR analysis of immune cells from AAV gene therapy-dosed Duchenne muscular dystrophy patients</h4>
+                        <p class="authors">Emami, M. R., Brimble, M. A., Espinoza, A., Owens, J., Whiteley, L. O., Casinghino, S., Lanz, T. A., Farahat, P. K., Pellegrini, M., Young, C. S., Thomas, P. G., McNally, E. M., Villalta, S. A., Schattgen, S. A., & Spencer, M. J.</p>
+                        <p class="journal"> Molecular therapy. Methods & clinical development, 32(4), 101349</p>
+                        <p>Clinical trials for Duchenne muscular dystrophy (DMD) are assessing the therapeutic efficacy of systemically delivered adeno-associated virus (AAV) carrying a modified DMD transgene. High vector doses (>1E14 vg/kg) are needed to globally transduce skeletal muscles; however, such doses trigger immune-related adverse events. Mitigating these immune responses is crucial for widespread application of AAV-based therapies. We used single-cell RNA sequencing and T cell receptor (TCR) sequencing on peripheral blood mononuclear cells from five participants prior to, and after, dosing. One subject in the high-dose cohort experienced thrombotic microangiopathy (TMA). Few changes in cell frequencies occurred after treatment; however, differential gene expression demonstrated induction of interferon response genes in most T cell types. T cell clonotype and clumping analysis showed the expansion or appearance of groups of related TCR sequences in the post-treatment samples. Three of these expanded clumps could be assigned to prior human herpesvirus infections, two of which were present in the participant that exhibited TMA. These data provide insight on the mechanistic basis of human immune-AAV interactions and lay a foundation for improved understanding of why TMA arises in some patients and not others.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1016/j.omtm.2024.101349" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>NAAA-regulated lipid signaling in monocytes controls the induction of hyperalgesic priming in mice</h4>
+                        <p class="authors">Fotio, Y., Mabou Tagne, A., Squire, E., Lee, H. L., Phillips, C. M., Chang, K., Ahmed, F., Greenberg, A. S., Villalta, S. A., Scarfone, V. M., Spadoni, G., Mor, M., & Piomelli, D.</p>
+                        <p class="journal">Nature communications, 15(1), 1705.</p>
+                        <p>Circulating monocytes participate in pain chronification but the molecular events that cause their deployment are unclear. Using a mouse model of hyperalgesic priming (HP), we show that monocytes enable progression to pain chronicity through a mechanism that requires transient activation of the hydrolase, N-acylethanolamine acid amidase (NAAA), and the consequent suppression of NAAA-regulated lipid signaling at peroxisome proliferator-activated receptor-α (PPAR-α). Inhibiting NAAA in the 72 hours following administration of a priming stimulus prevented HP. This effect was phenocopied by NAAA deletion and depended on PPAR-α recruitment. Mice lacking NAAA in CD11b+ cells - monocytes, macrophages, and neutrophils - were resistant to HP induction. Conversely, mice overexpressing NAAA or lacking PPAR-α in the same cells were constitutively primed. Depletion of monocytes, but not resident macrophages, generated mice that were refractory to HP. The results identify NAAA-regulated signaling in monocytes as a control node in the induction of HP and, potentially, the transition to pain chronicity.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1038/s41467-024-46139-5" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>Muscle immune cells protect mitochondrial organelles during exercise</h4>
+                        <p class="authors">Coulis, G., & Villalta, S. A.</p>
+                        <p class="journal">Nature, 625(7993), 35–36. </p>
+                        <p>A suppressive type of immune cell called a regulatory T cell has a key role in helping muscles to adapt to exercise — guarding muscle mitochondrial organelles against damage mediated by proinflammatory factors generated during physical activity.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1038/d41586-023-03972-w" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+
+
+                    
+                    <!-- 2023 Publications -->
+                    <h3>2023</h3>
+                    <div class="publication">
+                        <h4>Dysfunction of the aging female mouse urethra is associated with striated muscle loss and increased fibrosis: an initial report</h4>
+                        <p class="authors">Sadeghi, Z., Wu, Y. X., Vu, A., Song, L., Phan, W., Kim, J., Keast, J. R., Balis, U., DeLancey, J., Villalta, S. A., & Zi, X. </p>
+                        <p class="journal">American journal of clinical and experimental urology, 11(6), 516–529.</p>
+                        <p>The decline of urethral function with advancing age plays a major role in urinary incontinence in women, impairing quality of life and economically burdening the health care system. However, none of the current urinary incontinence treatments address the declining urethral function with aging, and the mechanisms by which aging impacts urethra physiology remain little known or explored. Here, we have compared functional, morphometric, and global gene expression of urethral tissues between young and old female mice. Bladder leak point pressure (LPP) measurement showed that the aged female mice had 26.55% lower LPP compared to younger mice. Vectorized Scale-Invariant Pattern Recognition (VIPR) analysis of the relative abundance of different tissue components revealed that the mid-urethra of old female mice contains less striated muscle, more extracellular matrix/fibrosis, and diminished elastin fibers ratio compared to young mice. Gene expression profiling analysis (bulk RNA-seq of the whole urethra) showed more down-regulated genes in aged than young mice. Immune response and muscle-related (striated and smooth) pathways were predominantly enriched. In contrast, keratinization, skin development, and cell differentiation pathways were significantly downregulated in aged urethral tissues compared to those from young female mice. These results suggest that molecular pathways (i.e., ACVR1/FST signaling and CTGF/TGF-β signaling) leading to a decreased striated muscle mass and an increase in fibrous extracellular matrix in the process of aging deserve further investigation for their roles in the declined urethral function.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/38148939/" style="margin-left: 10px; color: #003366; text-decoration: none;">PMCID</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>Nuclear RNA catabolism controls endogenous retroviruses, gene expression asymmetry, and dedifferentiation</h4>
+                        <p class="authors">Torre D, Fstkchyan YS, Ho JSY, Cheon Y, Patel RS, Degrace EJ, Mzoughi S, Schwarz M, Mohammed K, Seo JS, Romero-Bueno R, Demircioglu D, Hasson D, Tang W, Mahajani SU, Campisi L, Zheng S, Song WS, Wang YC, Shah H, Francoeur N, Soto J, Salfati Z, Weirauch MT, Warburton P, Beaumont K, Smith ML, Mulder L, Villalta SA, Kessenbrock K, Jang C, Lee D, De Rubeis S, Cobos I, Tam O, Hammell MG, Seldin M, Shi Y, Basu U, Sebastiano V, Byun M, Sebra R, Rosenberg BR, Benner C, Guccione E, Marazzi I. </p>
+                        <p class="journal">Mol Cell. 2023 Dec 7;83(23):4255-4271.e9.</p>
+                        <p>Endogenous retroviruses (ERVs) are remnants of ancient parasitic infections and comprise sizable portions of most genomes. Although epigenetic mechanisms silence most ERVs by generating a repressive environment that prevents their expression (heterochromatin), little is known about mechanisms silencing ERVs residing in open regions of the genome (euchromatin). This is particularly important during embryonic development, where induction and repression of distinct classes of ERVs occur in short temporal windows. Here, we demonstrate that transcription-associated RNA degradation by the nuclear RNA exosome and Integrator is a regulatory mechanism that controls the productive transcription of most genes and many ERVs involved in preimplantation development. Disrupting nuclear RNA catabolism promotes dedifferentiation to a totipotent-like state characterized by defects in RNAPII elongation and decreased expression of long genes (gene-length asymmetry). Our results indicate that RNA catabolism is a core regulatory module of gene networks that safeguards RNAPII activity, ERV expression, cell identity, and developmental potency.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1016/j.molcel.2023.10.036" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>Microglia promote anti-tumour immunity and suppress breast cancer brain metastasis</h4>
+                        <p class="authors">Evans KT, Blake K, Longworth A, Coburn MA, Insua-Rodríguez J, McMullen TP, Nguyen QH, Ma D, Lev T, Hernandez GA, Oganyan AK, Orujyan D, Edwards RA, Pridans C, Green KN, Villalta SA, Blurton-Jones M, Lawson DA.</p>
+                        <p class="journal">Mol Cell. 2023 Dec 7;83(23):4255-4271.e9.</p>
+                        <p>Breast cancer brain metastasis (BCBM) is a lethal disease with no effective treatments. Prior work has shown that brain cancers and metastases are densely infiltrated with anti-inflammatory, protumourigenic tumour-associated macrophages, but the role of brain-resident microglia remains controversial because they are challenging to discriminate from other tumour-associated macrophages. Using single-cell RNA sequencing, genetic and humanized mouse models, we specifically identify microglia and find that they play a distinct pro-inflammatory and tumour-suppressive role in BCBM. Animals lacking microglia show increased metastasis, decreased survival and reduced natural killer and T cell responses, showing that microglia are critical to promote anti-tumour immunity to suppress BCBM. We find that the pro-inflammatory response is conserved in human microglia, and markers of their response are associated with better prognosis in patients with BCBM. These findings establish an important role for microglia in anti-tumour immunity and highlight them as a potential immunotherapy target for brain metastasis.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1038/s41556-023-01273-y" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>Innate and adaptive AAV-mediated immune responses in a mouse model of Duchenne muscular dystrophy</h4>
+                        <p class="authors">Emami MR, Espinoza A, Young CS, Ma F, Farahat PK, Felgner PL, Chamberlain JS, Xu X, Pyle AD, Pellegrini M, Villalta SA, Spencer MJ.</p>
+                        <p class="journal">Mol Ther Methods Clin Dev. 2023 Jun 12;30:90-102.</p>
+                        <p>High systemic doses of adeno-associated viruses (AAVs) have been associated with immune-related serious adverse events (SAEs). Although AAV was well tolerated in preclinical models, SAEs were observed in clinical trials, indicating the need for improved preclinical models to understand AAV-induced immune responses. Here, we show that mice dual-dosed with AAV9 at 4-week intervals better recapitulate aspects of human immunity to AAV. In the model, anti-AAV9 immunoglobulin G (IgGs) increased in a linear fashion between the first and second AAV administrations. Complement activation was only observed in the presence of high levels of both AAV and anti-AAV IgG. Myeloid-derived pro-inflammatory cytokines were significantly induced in the same pattern as complement activation, suggesting that myeloid cell activation to AAV may rely on the presence of both AAV and anti-AAV IgG complexes. Single-cell RNA sequencing of peripheral blood mononuclear cells confirmed that activated monocytes were a primary source of pro-inflammatory cytokines and chemokines, which were significantly increased after a second AAV9 exposure. The same activated monocyte clusters expressed both Fcγ and complement receptors, suggesting that anti-AAV-mediated activation of myeloid cells through Fcγ receptors and/or complement receptors is one mechanism by which anti-AAV antigen complexes may prime antigen-presenting cells and amplify downstream immunity.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1016/j.omtm.2023.06.002" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>A cellular and molecular spatial atlas of dystrophic muscle</h4>
+                        <p class="authors">Stec MJ, Su Q, Adler C, Zhang L, Golann DR, Khan NP, Panagis L, Villalta SA, Ni M, Wei Y, Walls JR, Murphy AJ, Yancopoulos GD, Atwal GS, Kleiner S, Halasz G, Sleeman MW.</p>
+                        <p class="journal">Proc Natl Acad Sci U S A. 2023 Jul 18;120(29)</p>
+                        <p>Asynchronous skeletal muscle degeneration/regeneration is a hallmark feature of Duchenne muscular dystrophy (DMD); however, traditional -omics technologies that lack spatial context make it difficult to study the biological mechanisms of how asynchronous regeneration contributes to disease progression. Here, using the severely dystrophic D2-mdx mouse model, we generated a high-resolution cellular and molecular spatial atlas of dystrophic muscle by integrating spatial transcriptomics and single-cell RNAseq datasets. Unbiased clustering revealed nonuniform distribution of unique cell populations throughout D2-mdx muscle that were associated with multiple regenerative timepoints, demonstrating that this model faithfully recapitulates the asynchronous regeneration observed in human DMD muscle. By probing spatiotemporal gene expression signatures, we found that propagation of inflammatory and fibrotic signals from locally damaged areas contributes to widespread pathology and that querying expression signatures within discrete microenvironments can identify targetable pathways for DMD therapy. Overall, this spatial atlas of dystrophic muscle provides a valuable resource for studying DMD disease biology and therapeutic target discovery.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1073/pnas.2221249120" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+                    <div class="publication">
+                        <h4>Single-cell and spatial transcriptomics identify a macrophage population associated with skeletal muscle fibrosis</h4>
+                        <p class="authors">Coulis G, Jaime D, Guerrero-Juarez C, Kastenschmidt JM, Farahat PK, Nguyen Q, Pervolarakis N, McLinden K, Thurlow L, Movahedi S, Hughes BS, Duarte J, Sorn A, Montoya E, Mozaffar I, Dragan M, Othy S, Joshi T, Hans CP, Kimonis V, MacLean AL, Nie Q, Wallace LM, Harper SQ, Mozaffar T, Hogarth MW, Bhattacharya S, Jaiswal JK, Golann DR, Su Q, Kessenbrock K, Stec M, Spencer MJ, Zamudio JR, Villalta SA.</p>
+                        <p class="journal">Sci Adv. 2023 Jul 7;9(27)</p>
+                        <p>Macrophages are essential for skeletal muscle homeostasis, but how their dysregulation contributes to the development of fibrosis in muscle disease remains unclear. Here, we used single-cell transcriptomics to determine the molecular attributes of dystrophic and healthy muscle macrophages. We identified six clusters and unexpectedly found that none corresponded to traditional definitions of M1 or M2 macrophages. Rather, the predominant macrophage signature in dystrophic muscle was characterized by high expression of fibrotic factors, galectin-3 (gal-3) and osteopontin (Spp1). Spatial transcriptomics, computational inferences of intercellular communication, and in vitro assays indicated that macrophage-derived Spp1 regulates stromal progenitor differentiation. Gal-3+ macrophages were chronically activated in dystrophic muscle, and adoptive transfer assays showed that the gal-3+ phenotype was the dominant molecular program induced within the dystrophic milieu. Gal-3+ macrophages were also elevated in multiple human myopathies. These studies advance our understanding of macrophages in muscular dystrophy by defining their transcriptional programs and reveal Spp1 as a major regulator of macrophage and stromal progenitor interactions.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1126/sciadv.add9984" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+
+                    <h3>2022</h3>
+                    <div class="publication">
+                        <h4>Correlations of disease severity outcome measures in inclusion body myositis</h4>
+                        <p class="authors">Goyal NA, Greenberg SA, Cauchi J, Araujo N, Li V, Wencel M, Irani T, Wang LH, Palma AM, Villalta SA, Mozaffar T.</p>
+                        <p class="journal">Neuromuscul Disord. 2022 Oct;32(10):800-805</p>
+                        <p>This study aimed to evaluate the correlation between various outcome measures used to assess disease severity and progression in inclusion body myositis (IBM) clinical trials. A cross-sectional study, involving 51 IBM patients meeting the European Neuromuscular Center (ENMC) 2011 criteria for clinically defined or probable IBM, was completed at the University of California, Irvine. Clinical details, demographic data, and functional data including timed get up (TGU), manual muscle testing, hand grip, pinch dynamometry, as well as IBM functional rating scale (IBMFRS), modified Rankin score, forced vital capacity (FVC), and modified ocular bulbar facial respiratory scale (mOBFRS) were collected on all patients. Descriptive statistics and Pearson's r correlation were performed to analyze the data. Age of the patient did not correlate with any of the outcome measures. Greater severity of IBMFRS scores correlated with longer disease duration as well as greater severity for FVC, strength outcomes, TGU, modified Rankin, and mOBFRS. Additionally, TGU strongly correlated with muscle strength measurements, modified Rankin, and mOBFRS. mOBFRS moderately correlated with IBMFRS, muscle strength, FVC, TGU and modified Rankin score. We demonstrate moderate to strong correlations among the disease severity outcome measures in this study.</p>
+                        <div style="margin-top: 15px;">
+                            <a href="https://doi.org/10.1016/j.nmd.2022.08.005" style="margin-left: 10px; color: #003366; text-decoration: none;">DOI</a>
+                        </div>
+                    </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+</body>
+</html>
