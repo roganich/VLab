@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Your other JavaScript code here
 });
 
+
+
 // Get current page from URL or default to home
 function showPage(pageName) {
     // Hide all pages
@@ -40,8 +42,37 @@ navLinks.forEach(link => {
     });
 });
 
+const slider = document.querySelector('.slider');
+const images = document.querySelectorAll('.slider img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
 
+let index = 0;
+const totalImages = images.length;
 
-// Show home page by default
-showPage('home');
+function showSlide() {
+    if (index < 0) {
+        index = totalImages - 1;
+    } else if (index >= totalImages) {
+        index = 0;
+    }
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
 
+// Button event listeners
+prevBtn.addEventListener('click', () => {
+    index--;
+    showSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+    index++;
+    showSlide();
+    sys
+});
+
+// Auto-slide every 3 seconds
+setInterval(() => {
+    index++;
+    showSlide();
+}, 3000);
