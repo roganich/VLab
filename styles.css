@@ -430,7 +430,7 @@ footer {
 
 .slider {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .slider img {
@@ -438,6 +438,7 @@ footer {
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    flex-shrink: 0;
 }
 
 button {

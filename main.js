@@ -12,6 +12,40 @@ function includeHTML(id, filePath) {
 document.addEventListener('DOMContentLoaded', function() {
     includeHTML('header-container', 'header.html');
     includeHTML('footer-container', 'footer.html');
+
+    const slider = document.querySelector('.slider');
+    const images = document.querySelectorAll('.slider img');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+    const totalImages = images.length;
+
+    function showSlide() {
+      if (index < 0) {
+        index = totalImages - 1;
+      } else if (index >= totalImages) {
+        index = 0;
+      }
+      slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    // Button event listeners
+    prevBtn.addEventListener('click', () => {
+      index--;
+      showSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index++;
+      showSlide(); 
+      // Removed the 'sys' typo from here
+    });
+
+    // Auto-slide every 5 seconds
+    setInterval(() => {
+      index++;
+      showSlide();
+    }, 5000);
     
     // Your other JavaScript code here
 });
@@ -42,37 +76,3 @@ navLinks.forEach(link => {
     });
 });
 
-const slider = document.querySelector('.slider');
-const images = document.querySelectorAll('.slider img');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-
-let index = 0;
-const totalImages = images.length;
-
-function showSlide() {
-    if (index < 0) {
-        index = totalImages - 1;
-    } else if (index >= totalImages) {
-        index = 0;
-    }
-    slider.style.transform = `translateX(-${index * 100}%)`;
-}
-
-// Button event listeners
-prevBtn.addEventListener('click', () => {
-    index--;
-    showSlide();
-});
-
-nextBtn.addEventListener('click', () => {
-    index++;
-    showSlide();
-    sys
-});
-
-// Auto-slide every 3 seconds
-setInterval(() => {
-    index++;
-    showSlide();
-}, 3000);

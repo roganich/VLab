@@ -1,42 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University Research Lab</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>University Research Lab</title>
+<link rel="stylesheet" href="styles.css">
+<script src="main.js"></script>
+<style>
+    /* Main container margins */
+    #gallery-page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px; /* Add space on the sides */
+    }
+    
+    /* Photo Grid Styles */
+    .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px; /* Increased gap for more spacing */
+        margin-top: 20px;
+    }
+    
+    .photo-item {
+        border-radius: 15px; /* More rounded corners */
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        background-color: white;
+        transition: transform 0.3s ease;
+    }
+    
+    .photo-item:hover {
+        transform: scale(1.02);
+    }
+    
+    .photo-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 15px; /* Matching border radius for images */
+    }
+    
+    /* Responsive design for photo grid */
+    @media (max-width: 1200px) {
+        #gallery-page {
+            padding: 0 30px;
+        }
+    }
+    
+    @media (max-width: 1000px) {
+        .photo-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .photo-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        #gallery-page {
+            padding: 0 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .photo-grid {
+            grid-template-columns: 1fr;
+        }
+        #gallery-page {
+            padding: 0 15px;
+        }
+    }
+</style>
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <div id="header-container"></div>
+<!-- Header with Navigation -->
+<div id="header-container"></div>
 
-    <!-- Gallery Page Content -->
-    <main id="gallery-page">
-        <section>
-                <h2>Academic</h2>
-                <div class="slider-container">
-                    <div class="slider">
-                        <img src="images/IMG_7976.jpg" alt="Image 1">
-                        <img src="images/IMG_7977.jpg" alt="Image 2">
-                        <img src="images/IMG_7978.jpg" alt="Image 3">
-                        <img src="images/IMG_7978.jpg" alt="Image 4">
-                        <img src="images/IMG_7979.jpg" alt="Image 5">
-                    </div>
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
-                </div>
-                <script src="main.js"></script>
-        </section>
+<!-- Gallery Page Content -->
+<main id="gallery-page">
+    <section>
+        <h2>Academic</h2>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="images/academic/IMG_7976.jpg" alt="Image 1">
+                <img src="images/academic/IMG_7977.jpg" alt="Image 2">
+                <img src="images/academic/IMG_7978.jpg" alt="Image 3">
+                <img src="images/academic/IMG_7978.jpg" alt="Image 4">
+                <img src="images/academic/IMG_7979.jpg" alt="Image 5">
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Fun</h2>
+        <div class="photo-grid">
+            <!-- Row 1 -->
+            <div class="photo-item">
+                <img src="images/fun/fun_07.jpg" alt="Fun Photo 1">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_08.jpg" alt="Fun Photo 2">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_09.jpg" alt="Fun Photo 3">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_01.jpg" alt="Fun Photo 4">
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="photo-item">
+                <img src="images/fun/fun_02.jpg" alt="Fun Photo 5">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_03.jpg" alt="Fun Photo 6">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_04.jpg" alt="Fun Photo 7">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_05.jpg" alt="Fun Photo 8">
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="photo-item">
+                <img src="images/fun/fun_06.jpg" alt="Fun Photo 9">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_07.jpg" alt="Fun Photo 10">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_08.jpg" alt="Fun Photo 11">
+            </div>
+            <div class="photo-item">
+                <img src="images/fun/fun_09.jpg" alt="Fun Photo 12">
+            </div>            
+            
+        </div>
+    </section>
+</main>
 
+<!-- Footer -->
+<div id="footer-container"></div>
 
-        <section>
-            <h2>Fun</h2>
-        </section>
-    </main>
-
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
+<script src="main.js"></script>
 </body>
 </html>
