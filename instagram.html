@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed Display</title>
+    <link rel="stylesheet" href="styles.css" >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: white;
+            color: black;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 40px;
+            object-fit: cover;
+        }
+        
+        .profile-info h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .profile-stats {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .profile-stats div {
+            margin-right: 40px;
+        }
+        
+        .profile-stats span {
+            font-weight: 600;
+        }
+        
+        .profile-bio {
+            max-width: 400px;
+        }
+        
+        .feed-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .feed-item {
+            position: relative;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+        }
+        
+        .feed-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .feed-item:hover .feed-image {
+            transform: scale(1.03);
+        }
+        
+        .feed-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .feed-item:hover .feed-overlay {
+            opacity: 1;
+        }
+        
+        .feed-stats {
+            display: flex;
+            color: white;
+        }
+        
+        .feed-stats div {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+        
+        .feed-stats i {
+            margin-right: 7px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #8e8e8e;
+        }
+        
+        .error-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffebee;
+            color: #c62828;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-pic {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .feed-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .feed-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+    <div class="container">
+        <div class="profile-header">
+            <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-pic" id="profile-pic">
+            <div class="profile-info">
+                <h1 id="username">Loading...</h1>
+                <div class="profile-stats">
+                    <div><span id="posts-count">0</span> posts</div>
+                    <div><span id="followers-count">0</span> followers</div>
+                    <div><span id="following-count">0</span> following</div>
+                </div>
+                <div class="profile-bio" id="bio">Loading bio...</div>
+            </div>
+        </div>
+        
+        <div id="error-container"></div>
+        
+        <div class="feed-container" id="feed-container">
+            <div class="loading">Loading Instagram feed...</div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const config = {
+            // Replace with your actual values
+            access_token: 'IGAAeCe4DqSZAFBZAE5xN0dsd0NtNTYzb09JNFlTaHFGb1NBNldYU3g3ZAnVfNWNheHFReUVCSmZA3VXNvNno5Yjh4UWpPZAFZAER1lOenFTZAXBORjh2by1BMHE4bnFTTG5ud3JmNm5rY2I5aktFUWJ2NDFablVsZATFtd1hvc3dTMTNxWQZDZD',
+            instagram_account_id: '17841404198919407' // You need to use the numeric ID, not the username
+        };
+
+        // Display error message
+        function showError(message) {
+            const errorContainer = document.getElementById('error-container');
+            errorContainer.innerHTML = `<div class="error-message">${message}</div>`;
+        }
+
+        // Format numbers for display
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            }
+            if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num;
+        }
+
+        // Fetch data from Instagram API
+        async function fetchFromInstagram(endpoint, params = {}) {
+            const url = new URL(`https://graph.instagram.com/${endpoint}`);
+            
+            // Add access token to all requests
+            url.searchParams.append('access_token', config.access_token);
+            
+            // Add additional parameters
+            Object.entries(params).forEach(([key, value]) => {
+                url.searchParams.append(key, value);
+            });
+            
+            try {
+                const response = await fetch(url.toString());
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(`Instagram API Error: ${JSON.stringify(errorData)}`);
+                }
+                
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching from Instagram:', error);
+                throw error;
+            }
+        }
+
+        // Get user profile information
+        async function getUserProfile() {
+            try {
+                const profileData = await fetchFromInstagram('me', {
+                    fields: 'id,username,media_count,biography,profile_picture_url'
+                });
+                
+                return {
+                    id: profileData.id,
+                    username: profileData.username,
+                    profilePic: profileData.profile_picture_url || '/api/placeholder/150/150',
+                    bio: profileData.biography || '',
+                    mediaCount: profileData.media_count || 0
+                };
+            } catch (error) {
+                console.error('Error fetching user profile:', error);
+                throw error;
+            }
+        }
+
+        // Get user media
+        async function getUserMedia(limit = 15) {
+            try {
+                const mediaResponse = await fetchFromInstagram('me/media', {
+                    fields: 'id,media_type,media_url,thumbnail_url,permalink,caption,timestamp,like_count,comments_count',
+                    limit: limit
+                });
+                
+                if (!mediaResponse.data || mediaResponse.data.length === 0) {
+                    throw new Error('No media items returned from Instagram API');
+                }
+                
+                return mediaResponse.data.map(item => {
+                    // For VIDEO type, use thumbnail_url
+                    // For IMAGE and CAROUSEL_ALBUM, use media_url
+                    const imageUrl = item.media_type === 'VIDEO' ? item.thumbnail_url : item.media_url;
+                    
+                    return {
+                        id: item.id,
+                        imageUrl: imageUrl,
+                        mediaType: item.media_type,
+                        permalink: item.permalink,
+                        caption: item.caption || '',
+                        timestamp: item.timestamp,
+                        likes: item.like_count || 0,
+                        comments: item.comments_count || 0
+                    };
+                });
+            } catch (error) {
+                console.error('Error fetching user media:', error);
+                throw error;
+            }
+        }
+
+        // Load and display Instagram data
+        async function loadInstagramData() {
+            const feedContainer = document.getElementById('feed-container');
+            
+            try {
+                // Get user profile
+                const profile = await getUserProfile();
+                
+                // Update profile information
+                //document.getElementById('username').textContent = profile.username;
+                //document.getElementById('profile-pic').src = profile.profilePic;
+                //document.getElementById('posts-count').textContent = formatNumber(profile.mediaCount);
+                //document.getElementById('bio').textContent = profile.bio;
+                
+                // Get user media
+                const mediaItems = await getUserMedia();
+                
+                // Clear loading message
+                feedContainer.innerHTML = '';
+                
+                // Display media items
+                mediaItems.forEach(item => {
+                    const feedItem = document.createElement('div');
+                    feedItem.className = 'feed-item';
+                    
+                    feedItem.innerHTML = `
+                        <img src="${item.imageUrl}" alt="${item.caption}" class="feed-image">
+                        <div class="feed-overlay">
+                            <div class="feed-stats">
+                                <div>❤️ ${formatNumber(item.likes)}</div>
+                                <div>💬 ${formatNumber(item.comments)}</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    feedItem.addEventListener('click', () => {
+                        window.open(item.permalink, '_blank');
+                    });
+                    
+                    feedContainer.appendChild(feedItem);
+                });
+            } catch (error) {
+                console.error('Error loading Instagram data:', error);
+                showError(`Failed to load Instagram data: ${error.message}`);
+                feedContainer.innerHTML = '<div class="loading">Could not load Instagram feed. Please check the console for details.</div>';
+            }
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', loadInstagramData);
+    </script>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
